@@ -1,14 +1,4 @@
-#Market Fix by CheatMan - XDA
-service drm /system/bin/drmserver
-    user root
-    group root
-    enabled
-    oneshot
-
-#DHCP Fix by CheatMan - XDA
-service dhcpcd_eth0 /system/bin/dhcpcd -ABLK eth0
-    enabled
-    oneshot
+# CyanogenMod Extras
 
 # Compcache - handle at boot
 service compcache /system/bin/handle_compcache
@@ -16,6 +6,7 @@ service compcache /system/bin/handle_compcache
     group root
     oneshot
 
-import init.thunderc.usb.rc
-
-
+service run_usb /system/bin/run_usb
+    user root
+    group root
+    oneshot
